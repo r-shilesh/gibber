@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<title>Gibber</title>
+<link rel="icon" href="/Gibber/images/icon.tiff?v=3">
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+</head>
+<head>
+<link rel="stylesheet" type="text/css" href="Design.css">
+</head>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="script.js"></script>
+<body>
+	<div id="notification"></div>
+	<div id="title">
+		<div id="title1">Friends</div>
+	</div>
+	<div id='uploadBox' align="center">
+		<div id='slct'>
+			Select Image <input type="file" accept="image/*;" id="filename"
+				onchange="readURL(this);" /> <input id='slcUpl' type="button"
+				value="Upload" onclick="sendFile(true)" /><br> Or
+		</div>
+		<div id='slct_mic'>
+			Select Audio <input type="file" accept="audio/*;" id="audio"
+				onchange="readURL(this);" /> <input id='slcUpl_1' type="button"
+				value="Upload" onclick="sendFile(true)" /><br> Or
+		</div>
+		<div id='upld'>
+			<input id="f2" type="file" disabled>
+			<button id='uploadDrp' onclick="sendFile(false)">Upload</button>
+		</div>
+		<div class="drop">
+			<div id="filedrag">Drop the file here</div>
+			<img src="#" id="prof">
+		</div>
+		<div id='clo'>
+			<img id="cl" src="images/clo2.png">
+		</div>
+	</div>
+	<div id="top">
+		<div id="top1">
+			<font size="7">G</font><font size="6">IBBER</font>
+		</div>
+	</div>
+	<div id="colour">
+		<img id="i" alt="i" src="images/info.png">
+	</div>
+	<div id="colour_selection">
+		<div class="colours" id="clr1"></div>
+		<div class="colours" id="clr2"></div>
+		<div class="colours" id="clr3"></div>
+		<div class="colours" id="clr4"></div>
+		<div class="colours" id="clr5"></div>
+		<div class="colours" id="clr6"></div>
+	</div>
+
+
+	<div id="option"></div>
+	<div id="profile">
+		<button type='button' id='logout'
+			onclick="window.location.href='/Gibber/wh/logout.jsp'">Log
+			Out</button>
+		<img id="set" alt="set" src="images/settings.png">
+		<button id='upload' onclick='uploadBox()'>Change</button>
+	</div>
+
+	<div id="change_pass">
+		<img id="close1" alt="set" src="images/clo2.png"> <input
+			class="pass" id="pass1" type="password"
+			placeholder="Original Password"><br> <input class="pass"
+			id="pass2" type="password" placeholder="New Password"><br>
+		<input class="pass" id="pass3" type="password"
+			placeholder="Confirm Password"><br>
+		<button id="changeBtn" onclick="changePass()">Change</button>
+	</div>
+
+	<img id='close' alt="close" src="images/close.png">
+	<div id="frnd_list"></div>
+	<div id="chat">
+		<img id="icon" alt="i" src="images/GibberDark.png">
+	</div>
+	<div id="group">
+		<img id="icon" alt="i" src="images/GibberDark.png">
+	</div>
+	<div id="composer">
+		<form action="javascript:sendMessage()">
+			<img id="submitMsg" alt="Slow Connection.." src="images/Send1.png">
+			<textarea id="message" placeholder="Type a message..."></textarea>
+		</form>
+		<div id="partition1"></div>
+		<img id="pic" alt="pic" src="images/pic1.png"> <img id="mic"
+			alt="mic" src="images/mic1.png">
+		<div id="partition2"></div>
+	</div>
+	<div id="find_frnd">
+		<form action="javascript:findFriend()">
+			<input type="text" placeholder="Find Friends" id="findFrndTextBox">
+		</form>
+		<div id="line"></div>
+		<div id="available_frnds"></div>
+	</div>
+	<div id="frnd_rqsts"></div>
+	<div id="arrow_up"></div>
+	<div id="create_group">
+			<input id="add_participants" placeholder="Enter the participants"
+				type="text"><img id="ok" src="images/ok.png">
+			<div id="suggestion"></div>
+	</div>
+	<div id="groups"></div>
+	<div id="menu">
+		<img id="alert_chat" alt="Slow Conection.." src="images/alert.png"
+			hspace="35" style="cursor: pointer"> <img id="cht"
+			alt="Slow Conection.." src="images/chat.png" style="cursor: pointer">
+			
+			
+		<img id="alert_group" alt="Slow Conection.." src="images/alert.png"
+			hspace="35" style="cursor: pointer"> <img id="grp"
+			alt="Slow Conection.." src="images/grp.png" style="cursor: pointer">
+			
+			
+		<img id="frd" alt="Slow Conection.." src="images/findFriend.png"
+			hspace="35" style="cursor: pointer"> <img id="notfi"
+			alt="Slow Conection.." src="images/addFrnd.png" hspace="35"
+			style="cursor: pointer"> 
+		<img id="alert_frnd_rqust" alt="Slow Conection.." src="images/alert.png" 
+			hspace="35" style="cursor: pointer">
+	</div>
+</body>
+</html>
